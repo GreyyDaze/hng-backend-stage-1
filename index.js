@@ -22,7 +22,7 @@ app.get("/api/hello", async (req, res) => {
     try {
       // Fetch location data from ipinfo
       const locationResponse = await axios.get(
-        `https://ipinfo.io/json?token=${IPINFO_API_KEY}`
+        `https://ipinfo.io/${clientIp}?token=${IPINFO_API_KEY}`
       );
       const locationData = locationResponse.data;
       const city = locationData.city;
